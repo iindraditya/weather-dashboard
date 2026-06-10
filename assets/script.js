@@ -3,6 +3,8 @@ const API_KEY = '935365957435c9afc254728b3eeb1e6a';
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // DOM Elements
+// getElementById()dalam JavaScript memungkinkan kita untuk mengakses dan memanipulasi elemen individual dalam dokumen HTML secara langsung berdasarkan ID uniknya id.
+// Sumber : https://www.educative.io/answers/what-is-the-getelementbyid-method-in-javascript
 const cityInput = document.getElementById('cityInput');
 const searchBtn = document.getElementById('searchBtn');
 const weatherContainer = document.getElementById('weatherContainer');
@@ -11,12 +13,16 @@ const errorMessage = document.getElementById('error');
 const suggestionsDiv = document.getElementById('suggestions');
 
 // Event Listeners
+// addEventListener() adalah cara yang direkomendasikan untuk mendaftarkan pendengar acara.
+// Sumber : https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 searchBtn.addEventListener('click', handleSearch);
 cityInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSearch();
 });
 
 // Fetch current weather
+// function adalah sub-program yang bisa digunakan kembali baik di dalam program itu sendiri, maupun di program yang lain.
+// sumber : https://www.petanikode.com/javascript-fungsi/
 async function fetchCurrentWeather(city) {
     try {
         const response = await fetch(
