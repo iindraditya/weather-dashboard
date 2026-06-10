@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /*
+        margin: 0; menghapus margin default dari semua elemen, sehingga tidak ada ruang kosong di sekitar elemen.
+        padding: 0; menghapus padding default dari semua elemen, sehingga tidak ada ruang
+        box-sizing: border-box; memastikan bahwa padding dan border dihitung dalam total lebar dan tinggi elemen, sehingga memudahkan pengaturan layout.
+        sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+    */
 }
 
 body {
@@ -9,32 +15,64 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
+        /* 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; menetapkan jenis huruf yang digunakan dalam halaman web. Jika 'Segoe UI' tidak tersedia, maka akan mencoba menggunakan Tahoma, jika itu juga tidak tersedia, maka akan mencoba menggunakan Geneva, dan seterusnya.
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); memberikan latar belakang dengan gradien linear yang dimulai dari warna #667eea di sudut kiri atas (0%) hingga warna #764ba2 di sudut kanan bawah (100%).
+            min-height: 100vh; memastikan bahwa tinggi minimum halaman adalah 100% dari tinggi viewport, sehingga halaman akan selalu memenuhi layar.
+            padding: 20px; memberikan ruang di dalam elemen body sebesar 20px di semua sisi.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+        */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    /* 
+        max-width: 1200px; membatasi lebar maksimum kontainer agar tidak terlalu lebar pada layar besar, sehingga menjaga keterbacaan dan tata letak yang baik.
+        margin: 0 auto; secara horizontal memusatkan kontainer dengan memberikan margin kiri dan kanan otomatis.
+    */
 }
 
 header {
     text-align: center;
     color: white;
     margin-bottom: 40px;
+        /* 
+            text-align: center; menyelaraskan teks di dalam elemen header ke tengah.
+            color: white; memberikan warna putih pada teks di dalam header.
+            margin-bottom: 40px; memberikan ruang sebesar 40px di bawah header untuk memisahkan dari elemen berikutnya.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom
+        */
 }
 
 header h1 {
     font-size: 3em;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /*
+        font-size: 3em; menetapkan ukuran font untuk elemen h1 di dalam
+        header menjadi 3 kali ukuran font dasar.
+        margin-bottom: 10px; memberikan ruang sebesar 10px di bawah elemen h
+        sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom
+    */
 }
 
 header .subtitle {
     font-size: 1.1em;
     opacity: 0.9;
+    /*
+        font-size: 1.1em; menetapkan ukuran font untuk elemen dengan kelas subtitle di dalam header menjadi 1.1 kali ukuran font dasar.
+        opacity: 0.9; memberikan tingkat transparansi sebesar 90% pada elemen subtitle, sehingga sedikit tembus pandang.
+        sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/opacity
+    */
 }
 
 .search-section {
     margin-bottom: 30px;
+        /* 
+            margin-bottom: 30px; memberikan ruang sebesar 30px di bawah elemen dengan kelas search-section untuk memisahkan dari elemen berikutnya.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom
+        */
 }
 
 .search-box {
@@ -42,6 +80,13 @@ header .subtitle {
     gap: 10px;
     justify-content: center;
     margin-bottom: 15px;
+    /*
+        display: flex; mengubah elemen dengan kelas search-box menjadi fleksibel, memungkinkan penataan elemen anak secara horizontal.
+        gap: 10px; memberikan jarak sebesar 10px antara elemen anak di dalam search-box.
+        justify-content: center; menyelaraskan elemen anak di dalam search-box ke tengah secara horizontal.
+        margin-bottom: 15px; memberikan ruang sebesar 15px di bawah search-box untuk memisahkan dari elemen berikutnya.
+        sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+    */
 }
 
 #cityInput {
@@ -52,12 +97,28 @@ header .subtitle {
     width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+        /* 
+            padding: 12px 20px; memberikan ruang di dalam elemen input sebesar 12px di atas dan bawah, dan 20px di kiri dan kanan.
+            font-size: 1em; menetapkan ukuran font untuk elemen input menjadi sama dengan ukuran font dasar.
+            border: none; menghapus border default dari elemen input.
+            border-radius: 50px; memberikan sudut melengkung pada elemen input dengan radius 50px, sehingga terlihat seperti kapsul.
+            width: 300px; menetapkan lebar elemen input menjadi 300px.
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); memberikan efek bayangan pada elemen input untuk memberikan kesan kedalaman.
+            transition: all 0.3s ease; memberikan efek transisi yang halus selama 0.3 detik saat properti apa pun pada elemen input berubah, seperti saat fokus atau hover.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+        */
 }
 
 #cityInput:focus {
     outline: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transform: scale(1.02);
+        /* 
+            outline: none; menghapus garis tepi default yang muncul saat elemen input mendapatkan fokus.
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); memberikan efek bayangan yang lebih kuat pada elemen input saat mendapatkan fokus untuk menonjolkan elemen tersebut.
+            transform: scale(1.02); memperbesar elemen input sebesar 2% saat mendapatkan fokus untuk memberikan efek interaktif yang menarik.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+        */
 }
 
 #searchBtn {
@@ -71,12 +132,31 @@ header .subtitle {
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* 
+            padding: 12px 30px; memberikan ruang di dalam elemen button sebesar 12px di atas dan bawah, dan 30px di kiri dan kanan.
+            font-size: 1em; menetapkan ukuran font untuk elemen button menjadi sama dengan ukuran font dasar.
+            background: white; memberikan warna latar belakang putih pada elemen button.
+            color: #667eea; memberikan warna teks #667eea pada elemen button.
+            border: none; menghapus border default dari elemen button.
+            border-radius: 50px; memberikan sudut melengkung pada elemen button dengan radius 50px, sehingga terlihat seperti kapsul.
+            cursor: pointer; mengubah kursor menjadi pointer saat hover di atas elemen button untuk menunjukkan bahwa itu dapat diklik.
+            font-weight: bold; membuat teks pada elemen button menjadi tebal untuk menonjolkan tombol tersebut.
+            transition: all 0.3s ease; memberikan efek transisi yang halus selama 0.3 detik saat properti apa pun pada elemen button berubah, seperti saat hover atau aktif.
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); memberikan efek bayangan pada elemen button untuk memberikan kesan kedalaman.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+        */
 }
 
 #searchBtn:hover {
     background: #f0f0f0;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        /* 
+            background: #f0f0f0; memberikan warna latar belakang #f0f0f0 pada elemen button saat hover untuk memberikan efek interaktif.
+            transform: translateY(-2px); menggeser elemen button ke atas sebesar 2px saat hover untuk memberikan efek interaktif yang menarik.
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); memberikan efek bayangan yang lebih kuat pada elemen button saat hover untuk menonjolkan tombol tersebut.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+        */
 }
 
 #searchBtn:active {
@@ -89,6 +169,14 @@ header .subtitle {
     justify-content: center;
     gap: 10px;
     margin-top: 15px;
+        /* 
+            display: flex; mengubah elemen dengan kelas suggestions menjadi fleksibel, memungkinkan penataan elemen anak secara horizontal.
+            flex-wrap: wrap; memungkinkan elemen anak untuk membungkus ke baris berikutnya jika tidak muat dalam satu baris.
+            justify-content: center; menyelaraskan elemen anak di dalam suggestions ke tengah secara horizontal.
+            gap: 10px; memberikan jarak sebesar 10px antara elemen anak di dalam suggestions.
+            margin-top: 15px; memberikan ruang sebesar 15px di atas suggestions untuk memisahkan dari elemen sebelumnya.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+        */
 }
 
 .suggestion-btn {
@@ -100,6 +188,17 @@ header .subtitle {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9em;
+        /* 
+                padding: 8px 16px; memberikan ruang di dalam elemen dengan kelas suggestion-btn sebesar 8px di atas dan bawah, dan 16px di kiri dan kanan.
+                background: rgba(255, 255, 255, 0.2); memberikan warna latar belakang putih dengan tingkat transparansi 20% pada elemen suggestion-btn.
+                color: white; memberikan warna teks putih pada elemen suggestion-btn.
+                border: 1px solid rgba(255, 255, 255, 0.5); memberikan border dengan warna putih dan tingkat transparansi 50% pada elemen suggestion-btn.
+                border-radius: 20px; memberikan sudut melengkung pada elemen suggestion-btn dengan radius 20px.
+                cursor: pointer; mengubah kursor menjadi pointer saat hover di atas elemen suggestion-btn untuk menunjukkan bahwa itu dapat diklik.
+                transition: all 0.3s ease; memberikan efek transisi yang halus selama 0.3 detik saat properti apa pun pada elemen suggestion-btn berubah, seperti saat hover atau aktif.
+                font-size: 0.9em; menetapkan ukuran font untuk elemen suggestion-btn menjadi 0.9 kali ukuran font dasar.
+                sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+            */
 }
 
 .suggestion-btn:hover {
@@ -112,6 +211,14 @@ header .subtitle {
     padding: 30px;
     margin-bottom: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        /* 
+            background: white; memberikan warna latar belakang putih pada elemen dengan kelas weather-container.
+            border-radius: 20px; memberikan sudut melengkung pada elemen weather-container dengan radius 20px.
+            padding: 30px; memberikan ruang di dalam elemen weather-container sebesar 30px di semua sisi.
+            margin-bottom: 30px; memberikan ruang sebesar 30px di bawah weather-container untuk memisahkan dari elemen berikutnya.
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); memberikan efek bayangan yang kuat pada elemen weather-container untuk memberikan kesan kedalaman dan menonjolkan kontainer tersebut.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+        */
 }
 
 .weather-info {
@@ -119,6 +226,13 @@ header .subtitle {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-items: center;
+        /* 
+            display: grid; mengubah elemen dengan kelas weather-info menjadi grid, memungkinkan penataan elemen anak dalam baris dan kolom.
+            grid-template-columns: 1fr 1fr; membagi grid menjadi dua kolom yang masing-masing mengambil ruang yang sama (1fr).
+            gap: 20px; memberikan jarak sebesar 20px antara elemen anak di dalam weather-info.
+            align-items: center; menyelaraskan elemen anak di dalam weather-info ke tengah secara vertikal.
+            sumber : https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+        */
 }
 
 .weather-main {

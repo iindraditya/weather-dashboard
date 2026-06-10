@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <!-- 
+        #Meta viewport digunakan untuk mengontrol tata letak pada perangkat mobile. Dengan menggunakan width=device-width, kita memastikan bahwa lebar viewport sesuai dengan lebar layar perangkat, sehingga tampilan akan responsif dan mudah dibaca di berbagai ukuran layar.
+        # Sumber : https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <!-- 
+        #Meta charset digunakan untuk menentukan karakter encoding yang digunakan dalam dokumen HTML. Dengan menggunakan UTF-8, kita memastikan bahwa karakter dari berbagai bahasa dapat ditampilkan dengan benar di halaman web.
+        # Sumber : https://developer.mozilla.org/en-US/docs/Web/HTML/charset
+    -->
     <link rel="stylesheet" href="assets/style.css">
+    <!-- 
+        #link rel="stylesheet" digunakan untuk menghubungkan file CSS eksternal (style.css) ke dalam dokumen HTML, sehingga kita dapat mengatur tampilan dan gaya halaman web dengan menggunakan CSS.
+        # Sumber : https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
+    -->
 </head>
 <body>
     <div class="container">
+        <!-- 
+            #class container digunakan untuk membungkus seluruh konten halaman web, memberikan struktur dan memungkinkan kita untuk menerapkan gaya CSS yang konsisten pada seluruh halaman.
+            # Sumber : https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+        -->
         <header>
             <h1>Weather Dashboard</h1>
             <p class="subtitle">Check weather around the world</p>
         </header>
 
         <div class="search-section">
+            <!-- 
+                #class search-section digunakan untuk membungkus elemen-elemen yang terkait dengan pencarian cuaca, seperti input kota dan tombol pencarian, sehingga kita dapat mengatur tata letak dan gaya khusus untuk bagian ini.
+                # Sumber : https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+            -->
             <div class="search-box">
                 <input 
                     type="text" 
@@ -22,6 +43,10 @@
                     autocomplete="off"
                 >
                 <button id="searchBtn">Search</button>
+                <!-- 
+                    #GONG : Search Button Input dengan type search digunakan khusus saat situs kamu ingin dipasangkan sebuah form pencarian.
+                    # Sumber : https://sko.dev/referensi/html/input-search-di-html/
+                -->
             </div>
             <div id="suggestions" class="suggestions"></div>
         </div>

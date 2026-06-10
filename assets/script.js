@@ -24,22 +24,29 @@ cityInput.addEventListener('keypress', (e) => {
 // function adalah sub-program yang bisa digunakan kembali baik di dalam program itu sendiri, maupun di program yang lain.
 // sumber : https://www.petanikode.com/javascript-fungsi/
 async function fetchCurrentWeather(city) {
-    try {
+    try { 
+        // try adalah blok kode yang akan dijalankan dan jika terjadi error, maka akan dilempar ke catch untuk ditangani
+        // sumber : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
         const response = await fetch(
             `${API_BASE_URL}/weather?q=${city}&units=metric&appid=${API_KEY}`
         );
         
         if (!response.ok) {
+            // if (!response.ok) adalah kondisi yang akan terpenuhi jika response dari API tidak berhasil (misalnya karena kota tidak ditemukan atau masalah jaringan)
+            // sumber : https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
             throw new Error('City not found');
         }
         
         return await response.json();
     } catch (error) {
+        // catch adalah blok kode yang akan menangani error yang terjadi di dalam try
+        // sumber : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
         showError('Unable to fetch weather data. Please check your API key and city name.');
         console.error(error);
         return null;
     }
 }
+
 
 // Fetch weather forecast
 async function fetchForecast(lat, lon) {
@@ -106,6 +113,8 @@ function displayCurrentWeather(data) {
         month: 'long',
         day: 'numeric'
     });
+    // toLocaleDateString()instance Datemengembalikan string dengan representasi peka bahasa dari bagian tanggal ini dalam zona waktu lokal.
+    // sumber : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
     
     weatherContainer.innerHTML = `
         <div class="location-header">
