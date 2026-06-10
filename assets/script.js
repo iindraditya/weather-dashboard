@@ -182,6 +182,8 @@ function displayForecast(data) {
     let dayCount = 0;
     
     Object.keys(forecasts).forEach(date => {
+        //object.keys() digunakan untuk mendapatkan array yang berisi nama-nama properti (keys) dari objek forecasts. Dalam hal ini, keys tersebut adalah tanggal-tanggal yang digunakan untuk mengelompokkan data cuaca berdasarkan hari.
+        //sumber : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
         if (dayCount >= 5) return;
         
         const dayForecasts = forecasts[date];
